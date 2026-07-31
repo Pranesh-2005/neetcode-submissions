@@ -1,0 +1,13 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s) != len(t): return False
+        ar = [0] * 26
+        for ch in s:
+            ar[ord(ch) - ord('a')] += 1
+        for ch in t:
+            ar[ord(ch) - ord('a')] -= 1
+        for num in ar:
+            if num != 0:
+                return False
+        return True
+        
